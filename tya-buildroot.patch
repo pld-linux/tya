@@ -1,0 +1,13 @@
+diff -uNr tya1.3v2.orig/Makefile.in tya1.3v2/Makefile.in
+--- tya1.3v2.orig/Makefile.in	Mon Apr 19 15:04:37 1999
++++ tya1.3v2/Makefile.in	Fri Jun 18 17:30:06 1999
+@@ -39,7 +39,8 @@
+ 	gcc $(CFLAGS) $(JAVAINCLDIR) -o $(TARGET) $(CSOURCES) tya.S
+ 
+ install: $(TARGET)
+-	install -m 755 $(TARGET) $(LIBDIR)
++	install -d $(root)$(LIBDIR)
++	install -m 755 $(TARGET) $(root)$(LIBDIR)
+ 
+ tya.s: tya.c tya.h tyaconfig.h Makefile $(CSOURCES)
+ 	gcc $(CFLAGS) $(JAVAINCLDIR) -S $(CSOURCES)
