@@ -6,6 +6,7 @@ Release:	2
 License:	GPL
 Group:		Development/Languages/Java
 Source0:	ftp://gonzalez.cyberus.ca/pub/Linux/java/%{name}15.tgz
+# Source0-md5:	27d409c3f754ffa00388ae4dce0a0f93
 Source1:	%{name}.csh
 Source2:	%{name}.sh
 Patch0:		%{name}-buildroot.patch
