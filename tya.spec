@@ -33,7 +33,7 @@ gdy wiêkszo¶æ metod by³a ju¿ uruchomiona.
 
 %prep
 %setup -q -n tya%{version}
-%patch0 -p1 
+%patch0 -p1
 
 %build
 autoconf
