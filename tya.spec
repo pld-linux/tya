@@ -36,7 +36,7 @@ gdy wiêkszo¶æ metod by³a ju¿ uruchomiona.
 %patch0 -p1
 
 %build
-autoconf
+%{__autoconf}
 %configure
 %{__make}
 
