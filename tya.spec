@@ -3,15 +3,16 @@ Name:		tya
 Version:	1.5
 Release:	2
 License:	GPL
-Group:      Development/Languages/Java
-Group(de):  Entwicklung/Sprachen/Java
-Group(pl):  Programowanie/Jêzyki/Java
-Requires:	jdk
+Group:		Development/Languages/Java
+Group(de):	Entwicklung/Sprachen/Java
+Group(pl):	Programowanie/Jêzyki/Java
 Source0:	ftp://gonzalez.cyberus.ca/pub/Linux/java/%{name}15.tgz
 Source1:	%{name}.csh
 Source2:	%{name}.sh
-Patch0:		%{name}-1.3v2-buildroot.patch
+Patch0:		%{name}-buildroot.patch
 URL:		ftp://gonzalez.cyberus.ca/pub/Linux/java/
+BuildRequires:	autoconf
+Requires:	jdk
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -28,32 +29,33 @@ called before.
 %patch0 -p1 
 
 %build
-./configure --prefix=%{_prefix}/
+autoconf
+%configure
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT/etc/profile.d
+
 %{__make} install root=$RPM_BUILD_ROOT
+
 mv -f $RPM_BUILD_ROOT%{_libdir}/libtya.so $RPM_BUILD_ROOT%{_libdir}/libtya.so.%{version}
 ln -s libtya.so.%{version} $RPM_BUILD_ROOT%{_libdir}/libtya.so
 
 # install profile scripts
-install -d $RPM_BUILD_ROOT/etc/profile.d
-install -m755 $RPM_SOURCE_DIR/tya.*sh \
-	$RPM_BUILD_ROOT/etc/profile.d
+install %{SOURCE1} %{SOURCE2} $RPM_BUILD_ROOT/etc/profile.d
+
+gzip -9nf ChangeLog README FAQ
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post -p /sbin/ldconfig
-
+%post   -p /sbin/ldconfig
 %postun -p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING.GPL COPYRIGHT ChangeLog README FAQ
-%doc demo
-/usr/lib/libtya.so
-/usr/lib/libtya.so.%{version}
+%doc *gz demo
+%{_libdir}/libtya.so
+%{_libdir}/libtya.so.%{version}
 %attr(0755,root,root) /etc/profile.d/tya.*sh
