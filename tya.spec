@@ -1,4 +1,5 @@
-Summary:	TYA is a 100%% unofficial JIT-compiler for Java.
+Summary:	TYA is a 100%% unofficial JIT-compiler for Java
+Summary(pl):	TYA jest w 100%% nieoficjalnym kompilatorem JIT Javy
 Name:		tya
 Version:	1.5
 Release:	2
@@ -24,6 +25,14 @@ This means that Java programs will run faster than before, especially
 after some time of execution, when most methods have already been
 called before.
 
+%description -l pl
+TYA to "w 100%% nieoficjalny" kompilator Just-In-Time Javy. Kiedy Java
+jest uruchamiana z opcj± "-Djava.compiler=tya", automatycznie wykryje
+TYA i skompiluje cia³a metod z bytecodu na instrukcje Pentium
+bezpo¶rednio przed ich uruchomieniem po raz pierwszy. Oznacza to, ¿e
+programy w Javie bêd± dzia³aæ szybciej, zw³aszcza po jakim¶ czasie,
+gdy wiêkszo¶æ metod by³a ju¿ uruchomiona.
+
 %prep
 %setup -q -n tya%{version}
 %patch0 -p1 
@@ -40,7 +49,7 @@ install -d $RPM_BUILD_ROOT/etc/profile.d
 %{__make} install root=$RPM_BUILD_ROOT
 
 mv -f $RPM_BUILD_ROOT%{_libdir}/libtya.so $RPM_BUILD_ROOT%{_libdir}/libtya.so.%{version}
-ln -s libtya.so.%{version} $RPM_BUILD_ROOT%{_libdir}/libtya.so
+ln -sf libtya.so.%{version} $RPM_BUILD_ROOT%{_libdir}/libtya.so
 
 # install profile scripts
 install %{SOURCE1} %{SOURCE2} $RPM_BUILD_ROOT/etc/profile.d
