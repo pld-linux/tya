@@ -5,8 +5,6 @@ Version:	1.5
 Release:	2
 License:	GPL
 Group:		Development/Languages/Java
-Group(de):	Entwicklung/Sprachen/Java
-Group(pl):	Programowanie/Jêzyki/Java
 Source0:	ftp://gonzalez.cyberus.ca/pub/Linux/java/%{name}15.tgz
 Source1:	%{name}.csh
 Source2:	%{name}.sh
