@@ -52,8 +52,6 @@ ln -sf libtya.so.%{version} $RPM_BUILD_ROOT%{_libdir}/libtya.so
 # install profile scripts
 install %{SOURCE1} %{SOURCE2} $RPM_BUILD_ROOT/etc/profile.d
 
-gzip -9nf ChangeLog README FAQ
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -62,7 +60,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *gz demo
+%doc ChangeLog README FAQ demo
 %{_libdir}/libtya.so
 %{_libdir}/libtya.so.%{version}
 %attr(0755,root,root) /etc/profile.d/tya.*sh
