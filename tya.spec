@@ -31,7 +31,7 @@ make
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT
-make install root=$RPM_BUILD_ROOT
+%{__make} install root=$RPM_BUILD_ROOT
 mv $RPM_BUILD_ROOT/usr/lib/libtya.so $RPM_BUILD_ROOT/usr/lib/libtya.so.%{version}
 ln -s libtya.so.%{version} $RPM_BUILD_ROOT/usr/lib/libtya.so
 
