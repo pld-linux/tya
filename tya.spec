@@ -3,10 +3,9 @@ Name:		tya
 Version:	1.5
 Release:	2
 License:	GPL
-Group:		Libraries
-Group(de):	Libraries
-Group(fr):	Librairies
-Group(pl):	Biblioteki
+Group:      Development/Languages/Java
+Group(de):  Entwicklung/Sprachen/Java
+Group(pl):  Programowanie/Jêzyki/Java
 Requires:	jdk
 Source0:	ftp://gonzalez.cyberus.ca/pub/Linux/java/%{name}15.tgz
 Source1:	%{name}.csh
