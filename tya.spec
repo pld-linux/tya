@@ -26,7 +26,7 @@ execution, when most methods have already been called before.
 
 %build
 ./configure --prefix=/usr/
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
