@@ -10,7 +10,7 @@ Source1:	tya.csh
 Source2:	tya.sh
 Patch0:		tya-1.3v2-buildroot.patch
 URL:		ftp://gonzalez.cyberus.ca/pub/Linux/java/
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 TYA is a "100%% unofficial" Just-In-Time-compiler for Java. When Java is
