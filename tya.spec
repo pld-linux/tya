@@ -45,7 +45,8 @@ gdy wiêkszo¶æ metod by³a ju¿ uruchomiona.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT/etc/profile.d
 
-%{__make} install root=$RPM_BUILD_ROOT
+%{__make} install \
+	root=$RPM_BUILD_ROOT
 
 mv -f $RPM_BUILD_ROOT%{_libdir}/libtya.so $RPM_BUILD_ROOT%{_libdir}/libtya.so.%{version}
 ln -sf libtya.so.%{version} $RPM_BUILD_ROOT%{_libdir}/libtya.so
@@ -62,6 +63,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog README FAQ demo
-%{_libdir}/libtya.so
-%{_libdir}/libtya.so.%{version}
-%attr(0755,root,root) /etc/profile.d/tya.*sh
+%attr(755,root,root) %{_libdir}/libtya.so
+%attr(755,root,root) %{_libdir}/libtya.so.%{version}
+%attr(755,root,root) /etc/profile.d/tya.*sh
