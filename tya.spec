@@ -1,5 +1,5 @@
 Summary:	TYA is a 100%% unofficial JIT-compiler for Java
-Summary(pl):	TYA jest w 100%% nieoficjalnym kompilatorem JIT Javy
+Summary(pl.UTF-8):   TYA jest w 100%% nieoficjalnym kompilatorem JIT Javy
 Name:		tya
 Version:	1.5
 Release:	2
@@ -24,13 +24,13 @@ This means that Java programs will run faster than before, especially
 after some time of execution, when most methods have already been
 called before.
 
-%description -l pl
+%description -l pl.UTF-8
 TYA to "w 100%% nieoficjalny" kompilator Just-In-Time Javy. Kiedy Java
-jest uruchamiana z opcj± "-Djava.compiler=tya", automatycznie wykryje
-TYA i skompiluje cia³a metod z bytecodu na instrukcje Pentium
-bezpo¶rednio przed ich uruchomieniem po raz pierwszy. Oznacza to, ¿e
-programy w Javie bêd± dzia³aæ szybciej, zw³aszcza po jakim¶ czasie,
-gdy wiêkszo¶æ metod by³a ju¿ uruchomiona.
+jest uruchamiana z opcjÄ… "-Djava.compiler=tya", automatycznie wykryje
+TYA i skompiluje ciaÅ‚a metod z bytecodu na instrukcje Pentium
+bezpoÅ›rednio przed ich uruchomieniem po raz pierwszy. Oznacza to, Å¼e
+programy w Javie bÄ™dÄ… dziaÅ‚aÄ‡ szybciej, zwÅ‚aszcza po jakimÅ› czasie,
+gdy wiÄ™kszoÅ›Ä‡ metod byÅ‚a juÅ¼ uruchomiona.
 
 %prep
 %setup -q -n tya%{version}
