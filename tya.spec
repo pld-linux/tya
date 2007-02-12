@@ -1,5 +1,5 @@
 Summary:	TYA is a 100%% unofficial JIT-compiler for Java
-Summary(pl.UTF-8):   TYA jest w 100%% nieoficjalnym kompilatorem JIT Javy
+Summary(pl.UTF-8):	TYA jest w 100%% nieoficjalnym kompilatorem JIT Javy
 Name:		tya
 Version:	1.5
 Release:	2
