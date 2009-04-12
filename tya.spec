@@ -33,7 +33,7 @@ programy w Javie będą działać szybciej, zwłaszcza po jakimś czasie,
 gdy większość metod była już uruchomiona.
 
 %prep
-%setup -q -n tya%{version}
+%setup -q -n %{name}%{version}
 %patch0 -p1
 
 %build
